@@ -68,22 +68,9 @@ public class Twitter {
         		allTweets.addAll(getAllTweetsFromUser(it.next()));
         	}
         	//Sort
-        	Collections.sort(allTweets, new Comparator<Tweet>(){
-				@Override
-				public int compare(Tweet o1, Tweet o2) {
-					return o1.getDatePosted().compareTo(o2.getDatePosted());
-				}
-        	});
-        	List<Tweet> finalTweetsList = null;
-        	int startSubListIndex = 0;
-        	int endSubListIndex = (allTweets.size() >= 9) ? 9 : allTweets.size();
-        	finalTweetsList = allTweets.subList(startSubListIndex, endSubListIndex);
-        	
-        	List<Integer> finalTweetsIdList = new ArrayList<Integer>();
-        	for(Tweet tweet : finalTweetsList){
-        		finalTweetsIdList.add(tweet.getId());
-        	}
-        	newsFeed.addAll(finalTweetsIdList);
+        	sortTweetsBasedOnDate(allTweets);
+        	//Get the first 10 tweet ids out of the sorted list of tweets
+        	newsFeed.addAll(getRangeOfTweetIDs(allTweets, 0, 9));
         }
         return newsFeed;
     }
@@ -115,6 +102,15 @@ public class Twitter {
     	return userMap.get(userId);
     }
     
+    private void sortTweetsBasedOnDate(List<Tweet> tweets){
+    	Collections.sort(tweets, new Comparator<Tweet>(){
+			@Override
+			public int compare(Tweet o1, Tweet o2) {
+				return o1.getDatePosted().compareTo(o2.getDatePosted());
+			}
+    	});
+    }
+    
     private List<Tweet> getAllTweetsFromUser(int userId){
     	List<Tweet> allTweets = new ArrayList<Tweet>();
     	User user = userMap.get(userId);
@@ -122,5 +118,17 @@ public class Twitter {
     		allTweets = user.getTweets();
     	}
     	return allTweets;
+    }
+
+    private List<Integer> getRangeOfTweetIDs(List<Tweet> tweets, int start, int end){
+    	List<Integer> finalTweetsList = null;
+    	int startSubListIndex = start;
+    	int endSubListIndex = (tweets.size() >= end) ? end : tweets.size();
+    	
+    	List<Integer> finalTweetsIdList = new ArrayList<Integer>();
+    	for(Tweet tweet : tweets.subList(startSubListIndex, endSubListIndex)){
+    		finalTweetsIdList.add(tweet.getId());
+    	}
+    	return finalTweetsList;
     }
 }
