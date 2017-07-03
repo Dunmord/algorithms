@@ -121,7 +121,6 @@ public class Twitter {
     }
 
     private List<Integer> getRangeOfTweetIDs(List<Tweet> tweets, int start, int end){
-    	List<Integer> finalTweetsList = null;
     	int startSubListIndex = start;
     	int endSubListIndex = (tweets.size() >= end) ? end : tweets.size();
     	
@@ -129,6 +128,6 @@ public class Twitter {
     	for(Tweet tweet : tweets.subList(startSubListIndex, endSubListIndex)){
     		finalTweetsIdList.add(tweet.getId());
     	}
-    	return finalTweetsList;
+    	return finalTweetsIdList;
     }
 }
