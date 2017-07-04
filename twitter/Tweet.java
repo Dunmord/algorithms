@@ -6,6 +6,7 @@ import java.util.Date;
 public class Tweet {
 
 	private int id;
+	private int userThatPostedId;
 	private Date datePosted;
 	
 	public Tweet(int id){
@@ -15,6 +16,14 @@ public class Tweet {
 	
 	public int getId(){
 		return id;
+	}
+	
+	public void setUserThatPostedId(int userThatPostedId){
+		this.userThatPostedId = userThatPostedId;
+	}
+	
+	public int getUserThatPostedId(){
+		return userThatPostedId;
 	}
 	
 	public Date getDatePosted(){

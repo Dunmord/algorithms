@@ -56,41 +56,41 @@ public class TwitterNewsFeedTest {
 		int tweetId27 = 27;
 		
 		Twitter twitter = new Twitter();
-		twitter.delayedPostTweet(userId1, tweetId1);
-		twitter.delayedPostTweet(userId1, tweetId2);
-		twitter.delayedPostTweet(userId1, tweetId3);
+		twitter.postTweet(userId1, tweetId1);
+		twitter.postTweet(userId1, tweetId2);
+		twitter.postTweet(userId1, tweetId3);
 		
-		twitter.delayedPostTweet(userId2, tweetId4);
-		twitter.delayedPostTweet(userId2, tweetId5);
-		twitter.delayedPostTweet(userId2, tweetId6);
+		twitter.postTweet(userId2, tweetId4);
+		twitter.postTweet(userId2, tweetId5);
+		twitter.postTweet(userId2, tweetId6);
 		
-		twitter.delayedPostTweet(userId3, tweetId7);
-		twitter.delayedPostTweet(userId3, tweetId8);
-		twitter.delayedPostTweet(userId3, tweetId9);
+		twitter.postTweet(userId3, tweetId7);
+		twitter.postTweet(userId3, tweetId8);
+		twitter.postTweet(userId3, tweetId9);
 		
-		twitter.delayedPostTweet(userId4, tweetId10);
-		twitter.delayedPostTweet(userId4, tweetId11);
-		twitter.delayedPostTweet(userId4, tweetId12);
+		twitter.postTweet(userId4, tweetId10);
+		twitter.postTweet(userId4, tweetId11);
+		twitter.postTweet(userId4, tweetId12);
 		
-		twitter.delayedPostTweet(userId5, tweetId13);
-		twitter.delayedPostTweet(userId5, tweetId14);
-		twitter.delayedPostTweet(userId5, tweetId15);
+		twitter.postTweet(userId5, tweetId13);
+		twitter.postTweet(userId5, tweetId14);
+		twitter.postTweet(userId5, tweetId15);
 		
-		twitter.delayedPostTweet(userId6, tweetId16);
-		twitter.delayedPostTweet(userId6, tweetId17);
-		twitter.delayedPostTweet(userId6, tweetId18);
+		twitter.postTweet(userId6, tweetId16);
+		twitter.postTweet(userId6, tweetId17);
+		twitter.postTweet(userId6, tweetId18);
 		
-		twitter.delayedPostTweet(userId7, tweetId19);
-		twitter.delayedPostTweet(userId7, tweetId20);
-		twitter.delayedPostTweet(userId7, tweetId21);
+		twitter.postTweet(userId7, tweetId19);
+		twitter.postTweet(userId7, tweetId20);
+		twitter.postTweet(userId7, tweetId21);
 		
-		twitter.delayedPostTweet(userId8, tweetId22);
-		twitter.delayedPostTweet(userId8, tweetId23);
-		twitter.delayedPostTweet(userId8, tweetId24);
+		twitter.postTweet(userId8, tweetId22);
+		twitter.postTweet(userId8, tweetId23);
+		twitter.postTweet(userId8, tweetId24);
 		
-		twitter.delayedPostTweet(userId9, tweetId25);
-		twitter.delayedPostTweet(userId9, tweetId26);
-		twitter.delayedPostTweet(userId9, tweetId27);
+		twitter.postTweet(userId9, tweetId25);
+		twitter.postTweet(userId9, tweetId26);
+		twitter.postTweet(userId9, tweetId27);
 		
 		twitter.follow(userId1, userId2);
 		twitter.follow(userId1, userId3);
