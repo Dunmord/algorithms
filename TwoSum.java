@@ -12,16 +12,7 @@ public class TwoSum {
 			Set<Integer> o1ArrData = new HashSet<Integer>();
 			
 			for(int a = 0; a < arrData.length; a++){
-				if(target >= 0){
-					if(arrData[a] <= target){
-						o1ArrData.add(arrData[a]);
-					}
-				}
-				else{
-					if(target <= arrData[a]){
-						o1ArrData.add(arrData[a]);
-					}
-				}
+				o1ArrData.add(arrData[a]);
 			}
 			
 			for(int a = 0; a < arrData.length; a++){
